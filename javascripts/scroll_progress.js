@@ -59,8 +59,11 @@ function ScrollProgress (option) {
 
     // detect scroll progress
     window.addEventListener('scroll', function() {
-        percent = (dom.scrollTop/(dom.scrollHeight - document.documentElement.clientHeight))*100 + '%';
-        // console.log(percent);
+        if (dom.scrollTop) {
+            percent = (dom.scrollTop/(dom.scrollHeight - document.documentElement.clientHeight))*100 + '%';
+        } else {
+            percent = (window.pageYOffset/(dom.scrollHeight - document.documentElement.clientHeight))*100 + '%';
+        }
         if (option.position === 'top' || option.position === 'bottom') {
             div.style.width = percent;
         }
