@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Scroll_progress</title>
+<link rel="stylesheet" href="stylesheets/scroll_progress.css">
+</head>
+<body>
+    <ul></ul>
+<script>
+    for (var i = 1; 100 >= i; i++) {
+        var li = document.createElement('li');
+        li.innerHTML = '<img src="" alt="img" width="90" height="90"><span>'+i+'</span>';
+        document.querySelector('ul').appendChild(li);
+    };
+</script>
+</body>
+<script src="javascripts/scroll_progress.js"></script>
+<script>
+    var setting = {
+        position: 'left',
+        thick: 10,
+        color: '#ff8800'
+    }
+    // ScrollProgress(setting);
+    ScrollProgress();
+</script>
+</html>
